@@ -19,6 +19,7 @@ RUN_TESTSUITE(TestExtDomdocument);
 RUN_TESTSUITE(TestExtError);
 RUN_TESTSUITE(TestExtFb);
 RUN_TESTSUITE(TestExtFile);
+RUN_TESTSUITE(TestExtFileinfo);
 RUN_TESTSUITE(TestExtFunction);
 RUN_TESTSUITE(TestExtHash);
 RUN_TESTSUITE(TestExtIconv);

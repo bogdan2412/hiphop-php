@@ -19,6 +19,7 @@
 #include "error.inc"
 #include "fb.inc"
 #include "file.inc"
+#include "fileinfo.inc"
 #include "function.inc"
 #include "hash.inc"
 #include "iconv.inc"

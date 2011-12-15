@@ -247,6 +247,12 @@ include_directories(${ONIGURUMA_INCLUDE_DIRS})
 find_package(Ldap REQUIRED)
 include_directories(${LDAP_INCLUDE_DIR})
 
+# libmagic
+FIND_LIBRARY (MAGIC_LIB magic)
+if (NOT MAGIC_LIB)
+	message(FATAL_ERROR "You need to install libmagic")
+endif()
+
 # ncurses, readline and history
 #set(CURSES_NEED_NCURSES true)
 find_package(Ncurses REQUIRED)
@@ -397,6 +403,8 @@ endif()
 
 	target_link_libraries(${target} ${LDAP_LIBRARIES})
 	target_link_libraries(${target} ${LBER_LIBRARIES})
+
+	target_link_libraries(${target} ${MAGIC_LIB})
 
 	target_link_libraries(${target} ${LIBMEMCACHED_LIBRARY})
 
