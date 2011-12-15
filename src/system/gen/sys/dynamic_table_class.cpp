@@ -9739,6 +9739,121 @@ const ObjectStaticCallbacks cw_DateTime = {
   &c_DateTime::s_class_name,
   &c_DateTime::os_prop_table,&c_DateTime::ci___construct,0,0,0x0
 };
+ObjectData *coo_finfo() {
+  return NEWOBJ(c_finfo)();
+}
+IMPLEMENT_CLASS(finfo)
+const InstanceOfInfo c_finfo::s_instanceof_table[] = {
+  {0x5D75E8A90BDB473BLL,1,"finfo",&cw_finfo},
+};
+const int c_finfo::s_instanceof_index[] = {
+  1,
+  -1,0,
+};
+CallInfo c_finfo::ci_buffer((void*)&c_finfo::i_buffer, (void*)&c_finfo::ifa_buffer, 3, 4, 0x0000000000000000LL);
+CallInfo c_finfo::ci_set_flags((void*)&c_finfo::i_set_flags, (void*)&c_finfo::ifa_set_flags, 1, 4, 0x0000000000000000LL);
+CallInfo c_finfo::ci_file((void*)&c_finfo::i_file, (void*)&c_finfo::ifa_file, 3, 4, 0x0000000000000000LL);
+CallInfo c_finfo::ci___destruct((void*)&c_finfo::i___destruct, (void*)&c_finfo::ifa___destruct, 0, 4, 0x0000000000000000LL);
+CallInfo c_finfo::ci___construct((void*)&c_finfo::i___construct, (void*)&c_finfo::ifa___construct, 2, 4, 0x0000000000000000LL);
+Variant c_finfo::i___construct(MethodCallPackage &mcp, CArrRef params) {
+  return invoke_meth_few_handler(mcp, params, &ifa___construct);
+}
+Variant c_finfo::i___destruct(MethodCallPackage &mcp, CArrRef params) {
+  return invoke_meth_few_handler(mcp, params, &ifa___destruct);
+}
+Variant c_finfo::i_set_flags(MethodCallPackage &mcp, CArrRef params) {
+  return invoke_meth_few_handler(mcp, params, &ifa_set_flags);
+}
+Variant c_finfo::i_file(MethodCallPackage &mcp, CArrRef params) {
+  return invoke_meth_few_handler(mcp, params, &ifa_file);
+}
+Variant c_finfo::i_buffer(MethodCallPackage &mcp, CArrRef params) {
+  return invoke_meth_few_handler(mcp, params, &ifa_buffer);
+}
+Variant c_finfo::ifa___construct(MethodCallPackage &mcp, int count, INVOKE_FEW_ARGS_IMPL_ARGS) {
+  if (UNLIKELY(mcp.obj == 0)) {
+    return ObjectData::ifa_dummy(mcp, count, INVOKE_FEW_ARGS_PASS_ARGS, ifa___construct, coo_finfo);
+  }
+  c_finfo *self ATTRIBUTE_UNUSED (static_cast<c_finfo*>(mcp.obj));
+  if (UNLIKELY(count > 2)) return throw_toomany_arguments("__construct", 2, 1);
+  if (count <= 0) return (self->t___construct(), null);
+  CVarRef arg0(a0);
+  if (count <= 1) return (self->t___construct(arg0), null);
+  CVarRef arg1(a1);
+  return (self->t___construct(arg0, arg1), null);
+}
+Variant c_finfo::ifa___destruct(MethodCallPackage &mcp, int count, INVOKE_FEW_ARGS_IMPL_ARGS) {
+  if (UNLIKELY(mcp.obj == 0)) {
+    return ObjectData::ifa_dummy(mcp, count, INVOKE_FEW_ARGS_PASS_ARGS, ifa___destruct, coo_finfo);
+  }
+  c_finfo *self ATTRIBUTE_UNUSED (static_cast<c_finfo*>(mcp.obj));
+  if (UNLIKELY(count > 0)) return throw_toomany_arguments("__destruct", 0, 1);
+  return (self->t___destruct());
+}
+Variant c_finfo::ifa_set_flags(MethodCallPackage &mcp, int count, INVOKE_FEW_ARGS_IMPL_ARGS) {
+  if (UNLIKELY(mcp.obj == 0)) {
+    return ObjectData::ifa_dummy(mcp, count, INVOKE_FEW_ARGS_PASS_ARGS, ifa_set_flags, coo_finfo);
+  }
+  c_finfo *self ATTRIBUTE_UNUSED (static_cast<c_finfo*>(mcp.obj));
+  if (UNLIKELY(count != 1)) return throw_wrong_arguments("set_flags", count, 1, 1, 1);
+  CVarRef arg0(a0);
+  return (self->t_set_flags(arg0));
+}
+Variant c_finfo::ifa_file(MethodCallPackage &mcp, int count, INVOKE_FEW_ARGS_IMPL_ARGS) {
+  if (UNLIKELY(mcp.obj == 0)) {
+    return ObjectData::ifa_dummy(mcp, count, INVOKE_FEW_ARGS_PASS_ARGS, ifa_file, coo_finfo);
+  }
+  c_finfo *self ATTRIBUTE_UNUSED (static_cast<c_finfo*>(mcp.obj));
+  if (UNLIKELY(count > 3)) return throw_toomany_arguments("file", 3, 1);
+  if (count <= 0) return (self->t_file());
+  CVarRef arg0(a0);
+  if (count <= 1) return (self->t_file(arg0));
+  CVarRef arg1(a1);
+  if (count <= 2) return (self->t_file(arg0, arg1));
+  CVarRef arg2(a2);
+  return (self->t_file(arg0, arg1, arg2));
+}
+Variant c_finfo::ifa_buffer(MethodCallPackage &mcp, int count, INVOKE_FEW_ARGS_IMPL_ARGS) {
+  if (UNLIKELY(mcp.obj == 0)) {
+    return ObjectData::ifa_dummy(mcp, count, INVOKE_FEW_ARGS_PASS_ARGS, ifa_buffer, coo_finfo);
+  }
+  c_finfo *self ATTRIBUTE_UNUSED (static_cast<c_finfo*>(mcp.obj));
+  if (UNLIKELY(count > 3)) return throw_toomany_arguments("buffer", 3, 1);
+  if (count <= 0) return (self->t_buffer());
+  CVarRef arg0(a0);
+  if (count <= 1) return (self->t_buffer(arg0));
+  CVarRef arg1(a1);
+  if (count <= 2) return (self->t_buffer(arg0, arg1));
+  CVarRef arg2(a2);
+  return (self->t_buffer(arg0, arg1, arg2));
+}
+const MethodCallInfoTable c_finfo::s_call_info_table[] = {
+  { 0x7F974836AACC1EF3LL, 1, 10, "__destruct", &c_finfo::ci___destruct },
+  { 0x388CFA29241FE1A4LL, 1, 9, "set_flags", &c_finfo::ci_set_flags },
+  { 0x0D31D0AC229C615FLL, 1, 11, "__construct", &c_finfo::ci___construct },
+  { 0x7863294A8F33D14FLL, 0, 4, "file", &c_finfo::ci_file },
+  { 0x7D81FD51CF2E551FLL, 0, 6, "buffer", &c_finfo::ci_buffer },
+  { 0, 1, 0, 0 }
+};
+const int c_finfo::s_call_info_index[] = {
+  15,
+  -1,-1,-1,0,1,-1,-1,-1,
+  -1,-1,-1,-1,-1,-1,-1,2,
+
+};
+c_finfo *c_finfo::create(int64 a0, String a1) {
+  CountableHelper h(this);
+  init();
+  t___construct(a0, a1);
+  return this;
+}
+const ObjectStaticCallbacks cw_finfo = {
+  (ObjectData*(*)(ObjectData*))coo_finfo,
+  c_finfo::s_call_info_table,c_finfo::s_call_info_index,
+  c_finfo::s_instanceof_table,c_finfo::s_instanceof_index,
+  &c_finfo::s_class_name,
+  0,&c_finfo::ci___construct,0,0,0x0
+};
 ObjectData *coo_DOMNotation() {
   return NEWOBJ(c_DOMNotation)();
 }
@@ -10582,6 +10697,7 @@ static const hashNodeCTD ctdBuckets[] = {
   {0x7909270014376235LL,1,0,"SoapVar",(int64)&cw_SoapVar },
   {0x7FF7A8442616EF37LL,1,0,"DOMNodeIterator",(int64)&cw_DOMNodeIterator },
   {0x672AD818DDE95538LL,1,0,"ReflectionException",(int64)&cw_ReflectionException },
+  {0x5D75E8A90BDB473BLL,1,0,"finfo",(int64)&cw_finfo },
   {0x4C6991D3CF5CA03DLL,0,0,"Collator",(int64)&cw_Collator },
   {0x05DE30099B58533DLL,1,0,"GenericContinuation",(int64)&cw_GenericContinuation },
   {0x49FC1A1F7B878C3ELL,1,0,"SoapServer",(int64)&cw_SoapServer },
@@ -10667,31 +10783,31 @@ static const int ctdMapTable[] = {
   -1,-1,-1,-1,-1,10,-1,-1,
   -1,-1,-1,11,-1,-1,-1,12,
   -1,13,14,-1,15,16,-1,17,
-  18,-1,-1,-1,-1,19,21,-1,
-  -1,22,-1,-1,23,-1,25,-1,
-  -1,27,28,30,-1,31,32,33,
-  34,35,-1,36,-1,-1,-1,-1,
-  -1,-1,-1,-1,-1,-1,38,-1,
-  -1,39,40,41,-1,42,-1,-1,
-  43,-1,45,46,47,-1,-1,-1,
-  -1,-1,-1,48,-1,50,-1,-1,
-  -1,-1,51,-1,-1,52,-1,-1,
-  54,-1,55,56,57,-1,-1,58,
-  -1,-1,-1,-1,-1,-1,-1,59,
-  60,-1,-1,61,62,-1,-1,-1,
+  18,-1,-1,19,-1,20,22,-1,
+  -1,23,-1,-1,24,-1,26,-1,
+  -1,28,29,31,-1,32,33,34,
+  35,36,-1,37,-1,-1,-1,-1,
+  -1,-1,-1,-1,-1,-1,39,-1,
+  -1,40,41,42,-1,43,-1,-1,
+  44,-1,46,47,48,-1,-1,-1,
+  -1,-1,-1,49,-1,51,-1,-1,
+  -1,-1,52,-1,-1,53,-1,-1,
+  55,-1,56,57,58,-1,-1,59,
+  -1,-1,-1,-1,-1,-1,-1,60,
+  61,-1,-1,62,63,-1,-1,-1,
   -1,-1,-1,-1,-1,-1,-1,-1,
-  -1,-1,-1,-1,-1,-1,-1,65,
-  66,67,68,-1,-1,69,-1,71,
-  72,73,-1,-1,-1,-1,-1,-1,
-  -1,-1,74,-1,-1,75,-1,-1,
-  -1,-1,-1,76,-1,-1,-1,-1,
-  77,-1,-1,78,-1,-1,-1,-1,
-  79,-1,80,-1,82,-1,-1,-1,
-  83,84,85,-1,86,-1,-1,-1,
-  -1,-1,87,-1,88,-1,-1,-1,
+  -1,-1,-1,-1,-1,-1,-1,66,
+  67,68,69,-1,-1,70,-1,72,
+  73,74,-1,-1,-1,-1,-1,-1,
+  -1,-1,75,-1,-1,76,-1,-1,
+  -1,-1,-1,77,-1,-1,-1,-1,
+  78,-1,-1,79,-1,-1,-1,-1,
+  80,-1,81,-1,83,-1,-1,-1,
+  84,85,86,-1,87,-1,-1,-1,
+  -1,-1,88,-1,89,-1,-1,-1,
   -1,-1,-1,-1,-1,-1,-1,-1,
-  -1,-1,-1,-1,89,-1,-1,90,
-  -1,-1,-1,-1,91,92,-1,94,
+  -1,-1,-1,-1,90,-1,-1,91,
+  -1,-1,-1,-1,92,93,-1,95,
 
 };
 
